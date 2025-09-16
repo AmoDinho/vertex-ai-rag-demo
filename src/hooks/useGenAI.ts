@@ -18,6 +18,7 @@ export const useGenAI = () => {
     }
 
     const ai = new GoogleGenAI({
+      vertexai: true,
       apiKey: apiKey,
     });
 
