@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, HarmCategory, HarmBlockThreshold } from '@google/genai';
 import type { ChatMessage, StreamingResponse } from '../types/chat';
 
 export const useGenAI = () => {
@@ -40,20 +40,20 @@ export const useGenAI = () => {
       topP: 0.95,
       safetySettings: [
         {
-          category: 'HARM_CATEGORY_HATE_SPEECH',
-          threshold: 'OFF',
+          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
         },
         {
-          category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-          threshold: 'OFF',
+          category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
         },
         {
-          category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
-          threshold: 'OFF',
+          category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
         },
         {
-          category: 'HARM_CATEGORY_HARASSMENT',
-          threshold: 'OFF',
+          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+          threshold: HarmBlockThreshold.BLOCK_NONE,
         },
       ],
       tools: tools,
