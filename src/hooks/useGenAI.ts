@@ -39,6 +39,23 @@ export const useGenAI = () => {
       maxOutputTokens: 65535,
       temperature: 1,
       topP: 0.95,
+      systemInstruction: `
+            <role>
+            you are a customer support agent tool for an ecommerce website. user will use you tro troubleshoot issues that come from the help desk.
+            </role>
+
+            <reasoning>
+            you need to reason about the issue and suggest a resolution based on previous knowledge. Also tell the user which reviewIds they can use as a reference if they are asking you about a similar issue that has occured in the past.
+            </reasoning>
+
+            <response_format>
+if someone gives a description of an issue you need to respond with the following format:
+
+  recommended_resolution: "Here describe what you would suggest based on previous knowledge"
+  query_type: QUERY || REPLACEMENT || REFUND
+            </response_format>
+
+            `,
       safetySettings: [
         {
           category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
