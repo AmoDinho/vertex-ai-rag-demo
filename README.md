@@ -2,8 +2,8 @@
 
 This repo can be used to follow along with a post & video
 
-🎦 - Video
-📘 - Post
+🎦 - [Video](https://youtu.be/7ltkJMsax2E)
+📘 - [Post](https://amomoloko.substack.com/p/the-best-kept-ai-secret-in-2025-using)
 
 ## Installation Instructions
 
